@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\Bosko\Desktop\Bosko Vujanovic IT52-2019\.metadata\.plugins\org.eclipse.jdt.core
+222587033.index
+2640628727.index
+3690861400.index
+2943548576.index
+2346836515.index

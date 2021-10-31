@@ -1,0 +1,88 @@
+package GUI;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JSplitPane;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+public class dPoint extends JDialog {
+	private JLabel lblNewLabel;
+	private JLabel lblX;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			dPoint dialog = new dPoint();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public dPoint() {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+		{
+			JPanel panelWest = new JPanel();
+			getContentPane().add(panelWest, BorderLayout.WEST);
+			{
+				lblX = new JLabel("X coordinate");
+			}
+			{
+				lblNewLabel = new JLabel("New label");
+				lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+			}
+			GroupLayout gl_panelWest = new GroupLayout(panelWest);
+			gl_panelWest.setHorizontalGroup(
+				gl_panelWest.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_panelWest.createSequentialGroup()
+						.addComponent(lblX, GroupLayout.PREFERRED_SIZE, 0, GroupLayout.PREFERRED_SIZE)
+						.addGap(56))
+					.addGroup(Alignment.TRAILING, gl_panelWest.createSequentialGroup()
+						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(lblNewLabel)
+						.addGap(193))
+			);
+			gl_panelWest.setVerticalGroup(
+				gl_panelWest.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_panelWest.createSequentialGroup()
+						.addGroup(gl_panelWest.createParallelGroup(Alignment.LEADING)
+							.addComponent(lblX, GroupLayout.PREFERRED_SIZE, 0, GroupLayout.PREFERRED_SIZE)
+							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 228, GroupLayout.PREFERRED_SIZE))
+						.addContainerGap())
+			);
+			panelWest.setLayout(gl_panelWest);
+		}
+	}
+}

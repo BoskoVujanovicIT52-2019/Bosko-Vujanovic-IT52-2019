@@ -1,0 +1,120 @@
+package GUI;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JToggleButton;
+
+public class frmFrame extends JFrame {
+
+	private JPanel contentPane;
+	private final ButtonGroup btnGroup= new ButtonGroup();
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frmFrame frame = new frmFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public frmFrame() {
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 462, 331);
+		contentPane = new JPanel();
+		setTitle("Bosko Vujanovic IT52-2019");
+		setResizable(false);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		JPanel pnlCenter = new JPanel();
+		contentPane.add(pnlCenter, BorderLayout.CENTER);
+		
+		JPanel pnlSouth = new JPanel();
+		contentPane.add(pnlSouth, BorderLayout.SOUTH);
+		
+		JButton btnSelect = new JButton("SELECT");
+		btnSelect.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		pnlSouth.add(btnSelect);
+		
+		JButton btnModify = new JButton("MODIFY");
+		pnlSouth.add(btnModify);
+		
+		JButton btnDelete = new JButton("DELETE");
+		pnlSouth.add(btnDelete);
+		
+		JButton btnDeleteAll = new JButton("DELETE ALL");
+		pnlSouth.add(btnDeleteAll);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel, BorderLayout.NORTH);
+		
+		JToggleButton tglbtnPoint = new JToggleButton("POINT");
+		panel.add(tglbtnPoint);
+		
+		JToggleButton tglbtnLine = new JToggleButton("LINE");
+		panel.add(tglbtnLine);
+		
+		JToggleButton tglbtnRectangle = new JToggleButton("RECTANGLE");
+		panel.add(tglbtnRectangle);
+		
+		JToggleButton tglbtnCircle = new JToggleButton("CIRCLE");
+		panel.add(tglbtnCircle);
+		
+		JToggleButton tglbtnDonut = new JToggleButton("DONUT");
+		panel.add(tglbtnDonut);
+		btnGroup.add(tglbtnPoint);
+		tglbtnPoint.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				drawing.check(1);	
+				btnGroup.clearSelection();
+				btnGroup2.clearSelection();}
+		});
+		btnGroup.add(tglbtnDonut);
+		btnGroup.add(tglbtnCircle);
+		btnGroup.add(tglbtnRectangle);
+		tglbtnRectangle.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				drawing.check(3);
+				btnGroup.clearSelection();
+				btnGroup2.clearSelection();
+			}
+		});
+		btnGroup.add(tglbtnLine);
+		tglbtnLine.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				drawing.check(2);
+				btnGroup.clearSelection();
+				btnGroup2.clearSelection();
+			}
+		});
+		
+		
+	}
+
+}

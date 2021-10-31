@@ -1,0 +1,43 @@
+package geometry;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+//javax = java with an extension tj. prosirena verzija osnovnog java paketa
+import javax.swing.UIManager;
+public class DrawingPanel extends JPanel {
+
+public static void main(String[] args) {
+		//DrawingFrame frame;
+		JFrame frame = new JFrame("Bosko Vujanovic IT52-2019"); //title frame-a
+		frame.setBounds(500, 100, 800, 800); //velicina frame-a
+		frame.setBackground(Color.WHITE);
+		Drawing drawing = new Drawing();
+		frame.getContentPane().add(drawing);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+JButton btnPoint, btnLine, btnRectangle, btnCircle, btnDonut;
+	btnPoint=new JButton("Point");
+	btnLine = new JButton("Line");
+	btnRectangle = new JButton("Rectangle");
+	btnCircle = new JButton("Circle");
+	btnDonut = new JButton("Donut");
+	frame.add(btnPoint);
+	frame.add(btnCircle);
+	frame.add(btnRectangle);
+	frame.add(btnLine);
+	frame.add(btnDonut);
+	btnPoint.setSize(30, 30);
+}
+//public DrawingPanel(JFrame frame) {
+	//this.frame=frame;
+	
+}
+
+	
+
+

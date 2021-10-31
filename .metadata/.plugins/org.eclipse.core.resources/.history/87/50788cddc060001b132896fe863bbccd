@@ -1,0 +1,25 @@
+package geometry;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+//javax = java with an extension tj. prosirena verzija osnovnog java paketa
+import javax.swing.UIManager;
+public class DrawingPanel extends JPanel {
+
+	
+		
+		private Object[] shapes = new Object[10];
+		public DrawingPanel() {
+		shapes[0]=new Point(80,100);
+		shapes[1]=new Line(new Point(100,200), new Point(300, 400));
+		shapes[2]=new Circle(new Point(40, 40), 40);
+		}
+		
+
+	
+
+}

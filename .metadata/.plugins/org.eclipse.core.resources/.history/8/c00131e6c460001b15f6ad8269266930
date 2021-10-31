@@ -1,0 +1,20 @@
+package geometry;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+//javax = java with an extension tj. prosirena verzija osnovnog java paketa
+import javax.swing.UIManager;
+public class DrawingPanel extends JPanel {
+
+	private DrawingFrame frame;
+		
+		
+		
+
+	
+
+}
